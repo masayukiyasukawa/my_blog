@@ -1,6 +1,6 @@
 <h2><%= @post.title %></h2>
 <p><%= simple_format @post.body %></p>
-<p><%= @post.created_at %></p>
+<p><%= time_ago_in_words(@post.created_at) %></p>
 <h3>Comments</h3>
 <% if @post.comments.any? %>
   <ul>
@@ -12,7 +12,7 @@
           method: 'delete',
           class: 'command',
           data: { confirm: 'Sure?' } %>
-        <%= comment.created_at %>
+        <%= time_ago_in_words(comment.created_at) %>
       </li>
     <% end %>
   </ul>
