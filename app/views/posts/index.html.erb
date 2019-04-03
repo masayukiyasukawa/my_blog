@@ -3,17 +3,18 @@
   My Posts
 </h2>
 <ul>
-<% @posts.each do |post| %>
-  <li>
-    <p><%= link_to post.title, post_path(post) %></p>
-    <p><%= link_to '[Edit]', edit_post_path(post), class: 'command' %>
-    <%= link_to '[x]',
-    post_path(post),
-      method: 'delete',
-      class: 'command',
-      data: { confirm: 'Sure?' } %></p>
-    <%= time_ago_in_words(post.created_at) %>
-    <p>--------</p>
-  </li>
-<% end %>
+  <% @posts.each do |post| %>
+    <li>
+      <p><%= link_to post.title, post_path(post) %></p>
+      <p><%= link_to '[Edit]', edit_post_path(post), class: 'command' %>
+      <%= link_to '[x]',
+      post_path(post),
+        method: 'delete',
+        class: 'command',
+        data: { confirm: 'Sure?' } %></p>
+      <%= time_ago_in_words(post.created_at) %>
+      <p>--------</p>
+    </li>
+  <% end %>
 </ul>
+<%= paginate @posts %>
