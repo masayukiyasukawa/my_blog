@@ -5,11 +5,13 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
-      <p><%= link_to post.title.truncate(20), post_path(post) %></p>
       <p>
-        <% if post.picture? %>
-          <%= image_tag('clip.png', class: 'clip') %>
-        <% end%>
+        <%= link_to post.title.truncate(20), post_path(post) %>
+        <span>
+          <% if post.picture? %>
+            <%= image_tag('clip.png', class: 'clip') %>
+          <% end%>
+       </span>
       </p>
       <p><%= link_to '[Edit]', edit_post_path(post), class: 'command' %>
       <%= link_to '[x]',
