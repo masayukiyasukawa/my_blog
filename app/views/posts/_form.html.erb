@@ -14,10 +14,10 @@
   <% end %>
 </p>
 
-<p>
-  <%= f.label :picture %>
-  <%= f.file_field :picture, id: :book_picture %>
-</p>
+<div class="picture">
+  <p><%= f.label :picture %></p>
+  <p><%= f.file_field :picture, id: :book_picture %></p>
+</div>
 
 <p>
   <%= f.submit class:"btn btn-primary" %>
