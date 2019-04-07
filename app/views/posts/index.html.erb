@@ -4,7 +4,7 @@
 </h2>
 <ul>
   <% @posts.each do |post| %>
-    <li>
+    <li class="list-group-item">
       <p>
         <%= link_to post.title.truncate(20), post_path(post) %>
         <span>
@@ -20,7 +20,6 @@
         class: 'command',
         data: { confirm: 'Sure?' } %></p>
       <%= time_ago_in_words(post.created_at) %>
-      <p>--------</p>
     </li>
   <% end %>
 </ul>
