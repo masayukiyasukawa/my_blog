@@ -11,12 +11,14 @@
 
   <body>
     <div class="container">
-    <h1><%= link_to image_tag('logo.png', class: 'logo'), root_path %></h1>
+    <header>
+      <%= link_to image_tag('logo.png', class: 'logo'), root_path %>
 
-    <%= form_tag(search_path,:method => 'get') do %>
-     <%= text_field_tag :search %>
-     <%= submit_tag 'Search', :name => nil, class: 'btn btn-success search' %>
-    <% end %>
+      <%= form_tag(search_path,:method => 'get') do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag 'Search', :name => nil, class: 'btn btn-success search' %>
+      <% end %>
+    </header>
 
     <% flash.each do |name, msg| %>
       <div class="alert alert-<%= name %>">
